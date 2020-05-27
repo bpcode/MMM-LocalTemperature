@@ -328,7 +328,7 @@ Module.register("MMM-LocalTemperature", {
 					if (self.tempUnit === "fahrenheit") { symbol = "&deg;F"; }
 					else if (self.tempUnit === "kelvin") { symbol = " K"; }
 					dataContainer.innerHTML += "<span class=\"fa fa-thermometer-half\"></span> " + temperatureValue + symbol;
-					if (self.config.showHumidity) { dataContainer.innerHTML += " "; }
+					if (self.config.showHumidity) { dataContainer.innerHTML += "&nbsp;&nbsp;"; }
 				}
 				if (self.config.showHumidity) {
 					dataContainer.innerHTML += "<span class=\"fa fa-tint\"></span> " + humidityValue + "%";
