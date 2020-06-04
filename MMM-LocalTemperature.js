@@ -324,7 +324,7 @@ Module.register("MMM-LocalTemperature", {
 				dataContainer = document.createElement("div");
 				//dataContainer.classList.add("icon-view-container");
 
-        dataContainer.innerHTML += "<span class=\"fa fa-home\" style=\"color: maroon\"></span>&nbsp;&nbsp;";
+        dataContainer.innerHTML += "<span class=\"fa fa-home\" style=\"color: white\"></span>&nbsp;&nbsp;";
 
         var tempColor="slateblue";
         var humiColor="slateblue";
