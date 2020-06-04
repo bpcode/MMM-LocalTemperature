@@ -322,16 +322,29 @@ Module.register("MMM-LocalTemperature", {
 
 			if (self.config.iconView) {
 				dataContainer = document.createElement("div");
-				dataContainer.classList.add("icon-view-container");
+				//dataContainer.classList.add("icon-view-container");
+
+        dataContainer.innerHTML += "<span class=\"fa fa-home\" style=\"color: maroon\"></span>&nbsp;&nbsp;";
+
+        var tempColor="slateblue";
+        var humiColor="slateblue";
+        if (temperatureValue > 18 && temperatureValue <= 24) {tempColor="green";}
+        else if (temperatureValue > 24 && temperatureValue <= 30) {tempColor="orange";}
+        else if (temperatureValue > 30) {tempColor="red";}
+
+        if (humidityValue > 50 && humidityValue <= 60) {humiColor="green";}
+        else if (humidityValue > 60) {humiColor="red";}
+
+
 				if (self.config.showTemperature) {
 					var symbol = "&deg;C";
 					if (self.tempUnit === "fahrenheit") { symbol = "&deg;F"; }
 					else if (self.tempUnit === "kelvin") { symbol = " K"; }
-					dataContainer.innerHTML += "<span class=\"fa fa-thermometer-half\"></span> " + temperatureValue + symbol;
-					if (self.config.showHumidity) { dataContainer.innerHTML += "&nbsp;&nbsp;"; }
+					dataContainer.innerHTML += `<span class="fa fa-thermometer-half" style="color: ${tempColor}">&nbsp;${temperatureValue}${symbol}</span>`;
 				}
 				if (self.config.showHumidity) {
-					dataContainer.innerHTML += "<span class=\"fa fa-tint\"></span> " + humidityValue + "%";
+          dataContainer.innerHTML += "&nbsp;&nbsp;";
+					dataContainer.innerHTML += `<span class="fa fa-tint" style="color: ${humiColor}">&nbsp;${humidityValue}%</span>`;
 				}
 				wrapper.appendChild(dataContainer);
 			} else {
