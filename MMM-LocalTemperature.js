@@ -327,13 +327,13 @@ Module.register("MMM-LocalTemperature", {
         dataContainer.innerHTML += "<span class=\"fa fa-home\" style=\"color: white\"></span>&nbsp;&nbsp;";
 
         var tempColor="slateblue";
-        var humiColor="slateblue";
+        var humiColor="red";
         if (temperatureValue > 18 && temperatureValue <= 24) {tempColor="green";}
         else if (temperatureValue > 24 && temperatureValue <= 30) {tempColor="orange";}
         else if (temperatureValue > 30) {tempColor="red";}
 
         if (humidityValue > 50 && humidityValue <= 60) {humiColor="green";}
-        else if (humidityValue > 60) {humiColor="red";}
+        else if (humidityValue > 60) {humiColor="slateblue";}
 
 
 				if (self.config.showTemperature) {
